@@ -19,11 +19,11 @@
 </head>
 
 <body>
-    <div class="h-screen flex">
-        <div class="w-8/12" id="map"></div>
-        <div id="gallery" class="flex-1 flex overflow-hidden">
-            <div id="gallery-scroll" class="flex-1 overflow-y-scroll">
-                <div id="galleryList" class="container flex-grow mx-auto overscroll-contain overflow-y-auto">
+    <div class="h-screen flex flex-wrap">
+        <div class="w-full h-3/5 lg:h-full lg:w-8/12" id="map"></div>
+        <div id="gallery" class="w-full h-2/5 lg:w-4/12 lg:h-full flex-1 flex lg:overflow-hidden">
+            <div id="gallery-scroll" class="flex-row overflow-auto">
+                <div id="galleryList" class="container flex-grow mx-auto overscroll-contain overscroll-x-auto lg:overflow-y-auto">
                 </div>
             </div>
         </div>
@@ -94,8 +94,6 @@
             </div>
 
         </div>
-
-        <script src="counties-albers-10m.js"></script>
 
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
