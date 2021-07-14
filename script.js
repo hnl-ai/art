@@ -3,9 +3,9 @@ const map = L.map('map').setView([21.4389, -158.0001], 11);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
   minZoom: 11,
-  id: 'mapbox/streets-v11',
+  id: 'mapbox/light-v10',
   tileSize: 512,
-  zoomOffset: -1,
+  // zoomOffset: -1,
   accessToken: 'pk.eyJ1IjoibG92ZW1pbGt0ZWEiLCJhIjoiY2swcGFtb3JzMDhoMDNkcGE5NW9ueGh6aSJ9.OryBJxboTqlp_lmrUyTD1g'
 }).addTo(map);
 
@@ -68,10 +68,31 @@ fetch('http://data.honolulu.gov/api/resource/yef5-h88r.json')
               <p><i>${artPiece.discipline}, ${artPiece.location}, ${artPiece.date}</i></p>
               <p><i>${artPiece.credit || 'Unknown'}</i></p>
             </div>
+            <div class="flex flex-row mt-5">
+              ${(artPiece.latitude && artPiece.longitude) ?
+                `<button onclick="map.setView([${artPiece.latitude}, ${artPiece.longitude}], 20);" class="inline-flex items-center justify-center w-10 h-10 mr-2 text-blue-100 transition-colors duration-150 bg-blue-700 rounded-lg focus:shadow-outline hover:bg-blue-800">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+                <a target="_blank" href="https://maps.google.com/?q=${artPiece.latitude},${artPiece.longitude}">
+                  <button class="inline-flex items-center justify-center w-10 h-10 mr-2 text-blue-100 transition-colors duration-150 bg-blue-700 rounded-lg focus:shadow-outline hover:bg-blue-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                </a>
+                ` : ''
+              }
+            </div>
           </div>
         </div>
       </div>`);
           $('#galleryList').append(galleryItem);
+          $(`#${artPiece.objectId}-navigate`).on('click', function() {
+            console.log('test')
+            // map.setView([artPiece.latitude, artPiece.longitude, 15]);
+          });
           initPhotoSwipeFromDOM('.image-gallery');
           i += 1;
         }
