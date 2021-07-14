@@ -9,7 +9,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   accessToken: 'pk.eyJ1IjoibG92ZW1pbGt0ZWEiLCJhIjoiY2swcGFtb3JzMDhoMDNkcGE5NW9ueGh6aSJ9.OryBJxboTqlp_lmrUyTD1g'
 }).addTo(map);
 
-fetch('http://data.honolulu.gov/api/resource/yef5-h88r.json')
+fetch('https://data.honolulu.gov/api/resource/yef5-h88r.json')
   .then((res) => res.json())
   .then((data) => {
     fetch('art.json')
