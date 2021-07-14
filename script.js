@@ -5,14 +5,14 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   minZoom: 11,
   id: 'mapbox/light-v10',
   tileSize: 512,
-  // zoomOffset: -1,
+  zoomOffset: -1,
   accessToken: 'pk.eyJ1IjoibG92ZW1pbGt0ZWEiLCJhIjoiY2swcGFtb3JzMDhoMDNkcGE5NW9ueGh6aSJ9.OryBJxboTqlp_lmrUyTD1g'
 }).addTo(map);
 
 fetch('http://data.honolulu.gov/api/resource/yef5-h88r.json')
   .then((res) => res.json())
   .then((data) => {
-    fetch('/art.json')
+    fetch('art.json')
       .then((res) => res.json())
       .then((art) => {
         const artMap = {};
@@ -28,11 +28,6 @@ fetch('http://data.honolulu.gov/api/resource/yef5-h88r.json')
           if (artPiece.title && artMap[artPiece.title]) {
             artPiece.extraProperties = artMap[artPiece.title];
           }
-
-          const icon = L.icon({
-            iconUrl: 'memorial.png',
-            iconSize: [24, 24]
-          });
 
           const marker = L.marker([artPiece.latitude, artPiece.longitude], {
             ordinal: i
