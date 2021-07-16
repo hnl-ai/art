@@ -1,0 +1,16 @@
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+}
+
+.has-tooltip {
+    height: 24px;
+    width: 24px;
+}
+
+.has-tooltip:hover .tooltip {
+    visibility: visible !important;
+    z-index: 50;
+    top: 105%;
+    right: 0;
+}
