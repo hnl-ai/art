@@ -5,9 +5,9 @@
 
   <p align="center">
     A project for a new updated viewer of public art in the city of Honolulu
+    <br />
+    <a href="https://hnl-ai.github.io/art/">View Project</a>
   </p>
-  <br />
-  <a href="https://hnl-ai.github.io/art/">View Project</a>
 </p>
 
 <!-- ABOUT THE PROJECT -->
@@ -17,6 +17,11 @@ This project provides an updated interface to view and navigate through public a
 
 ### Why this exists:
 The [current existing project](https://github.com/Honolulu/art) ([art.honolulu.gov](http://art.honolulu.gov/)) was last updated a decade ago. This project is an initiative to update the existing project with a new and refreshed user interface.
+
+
+### Project Screenshots
+
+![Landing](docs/landing.png)
 
 ## How It Works
 
