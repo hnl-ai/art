@@ -18,6 +18,15 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
 
     <link rel="stylesheet" href="style.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9LLCJNWBHV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9LLCJNWBHV');
+    </script>
 </head>
 
 <body>
@@ -25,7 +34,8 @@
         <div class="w-full h-3/5 lg:h-full lg:w-8/12" id="map"></div>
         <div id="gallery" class="w-full h-2/5 lg:w-4/12 lg:h-full flex-1 flex lg:overflow-hidden">
             <div id="gallery-scroll" class="flex-row overflow-auto">
-                <div id="galleryList" class="container flex-grow mx-auto overscroll-contain overscroll-x-auto lg:overflow-y-auto">
+                <div id="galleryList"
+                    class="container flex-grow mx-auto overscroll-contain overscroll-x-auto lg:overflow-y-auto">
                 </div>
             </div>
         </div>
