@@ -1,13 +1,13 @@
 <p align="center">
   🎨🖼️
 
-  <h3 align="center">Art@Honolulu</h3>
+  <h3 align="center">Public Art in Honolulu</h3>
 
   <p align="center">
     A project for a new updated viewer of public art in the city of Honolulu
   </p>
   <br />
-  <!-- <a href="https://hpdstats.com">View Project</a> -->
+  <a href="https://hnl-ai.github.io/art/">View Project</a>
 </p>
 
 <!-- ABOUT THE PROJECT -->
